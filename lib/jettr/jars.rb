@@ -8,6 +8,7 @@ module Jettr
   require "jettr/jars/jsp-2.1"
   require "jettr/jars/jruby-rack-0.9.6"
   require "jettr/jars/jettr-java"
+  require "jettr/jars/akuma-1.3-jar-with-dependencies.jar"
   
   module Jetty
     include_package "org.mortbay.jetty"
@@ -32,5 +33,8 @@ module Jettr
   module Rack
     include_package "org.jruby.rack"
     include_package "org.jruby.rack.rails"
+  end
+  module Akuma
+    include_package "com.sun.akuma"
   end
 end
