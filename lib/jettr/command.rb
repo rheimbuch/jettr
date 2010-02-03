@@ -4,9 +4,8 @@ require 'jettr/config'
 
 module Jettr
   class Command < Thor
-    namespace "jettr"
     
-    desc "start [PATH]", "Start the webapp at PATH"
+    desc "start [PATH] [--port=, --type=, --uri=]", "Start the webapp at PATH"
     method_option :port, :type => :numeric, :default => 8080, :alias => "-p"
     method_option :type, :type => :string, :default => "webapp", :alias => "-w"
     method_option :uri, :type => :string, :default => "/", :alias => "-u"
