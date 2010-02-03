@@ -15,7 +15,10 @@ module Jettr
       end
       config.server.set_default(:port, 8080)
       config.set_default(:apps, [])
-      puts "Config initialized..."
+    end
+    
+    def store
+      return @config
     end
     
     def create_server
@@ -23,7 +26,9 @@ module Jettr
       server = Jettr::Server.new(config.server.to_hash)
       config.apps.each do |app_config|
         if app_config[:app_path] && config.exists?(:base_path)
-          app_config[:app_path] = File.join(config.base_path, app_config[:app_config])
+          app_config[:app_path] = File.expand_path(File.join(config.base_path, app_config[:app_config]))
+        elsif app_config[:app_path]
+          app_config[:app_path] = File.expand_path(app_config[:app_path])
         end
         server.handlers << create_app(app_config)
         puts "Added handler: #{server.handlers.last.inspect}"
