@@ -16,10 +16,8 @@ module Jettr
       config = nil
       config_file = File.join(path,"jettr.yaml")
       if File.exist?(config_file)
-        puts "Loading config file: #{config_file}"
         config = Jettr::Config.new(:config_file => config_file)
       else
-        puts "Loading config..."
         config = Jettr::Config.new({
           :server => {
             :port => options[:port]
