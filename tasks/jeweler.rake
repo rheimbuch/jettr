@@ -12,6 +12,7 @@ begin
     gem.add_dependency 'configatron', ">=1.5.1"
     gem.add_dependency 'log4r', '>=1.1.4'
     gem.add_dependency 'thor'
+    gem.add_dependency 'activesupport', "~>2.3.5"
   end
 rescue LoadError
   puts "Jeweler no available. Install with: gem install jeweler"
