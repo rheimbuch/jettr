@@ -25,6 +25,7 @@ module Jettr
       puts "Creating server..."
       server = Jettr::Server.new(config.server.to_hash)
       config.apps.each do |app_config|
+        app_config.symbolize_keys!
         if app_config[:app_path] && config.exists?(:base_path)
           app_config[:app_path] = File.expand_path(File.join(config.base_path, app_config[:app_config]))
         elsif app_config[:app_path]
