@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "features/jettr/step_definitions/create_server_steps.rb",
      "features/jettr/support/hooks.rb",
      "features/jettr/support/lib.rb",
+     "jettr.gemspec",
      "lib/jettr.rb",
      "lib/jettr/command.rb",
      "lib/jettr/config.rb",
